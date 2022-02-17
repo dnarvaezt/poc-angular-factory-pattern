@@ -1,4 +1,6 @@
+import { InvoiceManager } from 'src/core/invoice/invoice.manager';
 import { Component, OnInit } from '@angular/core';
+import { InvoiceService } from '../../invoice.service';
 
 @Component({
   selector: 'app-invoice-form',
@@ -8,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class InvoiceFormComponent implements OnInit {
   public currentOriginName = 'General';
 
-  constructor() {}
+  constructor(
+    public invoiceService: InvoiceService,
+    private invoiceManager: InvoiceManager
+  ) {}
 
   ngOnInit(): void {}
+
+  async onSave() {
+    await this.invoiceManager.set({});
+  }
 }

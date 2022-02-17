@@ -1,4 +1,6 @@
+import { InvoiceManager } from 'src/core/invoice/invoice.manager';
 import { Component, OnInit } from '@angular/core';
+import { InvoiceService } from '../../invoice.service';
 import { InvoiceFormComponent } from './invoice-form.component';
 
 @Component({
@@ -10,8 +12,11 @@ export class InvoiceFormMexComponent
   extends InvoiceFormComponent
   implements OnInit
 {
-  constructor() {
-    super();
+  constructor(
+    override invoiceService: InvoiceService,
+    invoiceManager: InvoiceManager
+  ) {
+    super(invoiceService, invoiceManager);
   }
 
   override ngOnInit(): void {

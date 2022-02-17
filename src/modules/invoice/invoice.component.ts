@@ -1,6 +1,6 @@
-import { AppService } from 'src/app/app.service';
 import { OriginEnum } from 'src/utils/enums/origin.enum';
 import { Component, OnInit } from '@angular/core';
+import { InvoiceService } from './invoice.service';
 
 @Component({
   selector: 'app-invoice',
@@ -8,15 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice.component.scss'],
 })
 export class InvoiceComponent implements OnInit {
-  constructor(private appService: AppService) {}
+  constructor(public invoiceService: InvoiceService) {}
 
   ngOnInit(): void {}
-
-  get currentOrigin() {
-    return this.appService.currentOrigin;
-  }
-
-  get originEnum() {
-    return OriginEnum;
-  }
 }

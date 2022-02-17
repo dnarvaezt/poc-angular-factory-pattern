@@ -8,17 +8,29 @@ export abstract class InvoiceManager {
 export class GeneralInvoiceManager implements InvoiceManager {
   constructor(public invoiceRepository: InvoiceRepository) {}
 
-  async set(item: any): Promise<any> {}
+  async set(item: any): Promise<any> {
+    console.log('>>>> SET general');
+  }
   async delete(string: any): Promise<any> {}
 }
 
 export class COLInvoiceManager
   extends GeneralInvoiceManager
-  implements InvoiceManager {}
+  implements InvoiceManager
+{
+  override async set(item: any): Promise<any> {
+    console.log('>>>> SET COL');
+  }
+}
 
 export class MEXInvoiceManager
   extends GeneralInvoiceManager
-  implements InvoiceManager {}
+  implements InvoiceManager
+{
+  override async set(item: any): Promise<any> {
+    console.log('>>>> SET MEX');
+  }
+}
 
 export class CHLInvoiceManager
   extends GeneralInvoiceManager

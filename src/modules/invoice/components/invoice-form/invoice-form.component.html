@@ -1,1 +1,59 @@
-<span>Origin: {{ currentOriginName }}</span>
+<div class="container">
+  <small>Origin: {{ currentOriginName }}</small>
+
+  <div class="row g-3 pt-4 needs-validation" novalidate>
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Opción 1</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        value=""
+        required
+      />
+    </div>
+
+    <div
+      [hidden]="
+        invoiceService.currentOrigin === invoiceService.originEnum.COL ||
+        invoiceService.currentOrigin === invoiceService.originEnum.MEX
+      "
+      class="col-md-4"
+    >
+      <label for="validationCustom02" class="form-label">Opción 2</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom02"
+        value=""
+        required
+      />
+    </div>
+    <div
+      [hidden]="invoiceService.currentOrigin === invoiceService.originEnum.MEX"
+      class="col-md-4"
+    >
+      <label for="validationCustom03" class="form-label">Opción 3</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom03"
+        value=""
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom04" class="form-label">Opción 4</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom04"
+        value=""
+        required
+      />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="onSave()">Guardar</button>
+    </div>
+  </div>
+</div>

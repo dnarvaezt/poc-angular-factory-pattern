@@ -1,17 +1,14 @@
-<div class="p-4 mb-3 bg-light rounded-3">
+<div class="px-4 mb-3 bg-light">
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">Invoice</h1>
-    <div>
-      <app-origin-manager></app-origin-manager>
-    </div>
   </div>
 </div>
 
-<div [ngSwitch]="currentOrigin">
-  <div *ngSwitchCase="originEnum.COL">
+<div [ngSwitch]="invoiceService.currentOrigin">
+  <div *ngSwitchCase="invoiceService.originEnum.COL">
     <app-invoice-form-col></app-invoice-form-col>
   </div>
-  <div *ngSwitchCase="originEnum.MEX">
+  <div *ngSwitchCase="invoiceService.originEnum.MEX">
     <app-invoice-form-mex></app-invoice-form-mex>
   </div>
   <div *ngSwitchDefault>
