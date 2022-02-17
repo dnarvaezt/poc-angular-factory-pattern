@@ -1,6 +1,7 @@
 import { AppService } from 'src/app/app.service';
 import { OriginEnum } from 'src/utils/enums/origin.enum';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-origin-manager',
@@ -17,7 +18,7 @@ export class OriginManagerComponent implements OnInit {
     { name: 'Uruguay', code: OriginEnum.URY },
   ];
 
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -27,5 +28,6 @@ export class OriginManagerComponent implements OnInit {
 
   onSetCurrentCountry(country: number) {
     this.appService.currentOrigin = country;
+    this.router.navigate([`${country}`]);
   }
 }
