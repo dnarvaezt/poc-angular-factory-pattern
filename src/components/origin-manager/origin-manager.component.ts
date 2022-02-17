@@ -19,9 +19,7 @@ export class OriginManagerComponent implements OnInit {
 
   constructor(private appService: AppService) {}
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
 
   get currentOrigin() {
     return this.appService.currentOrigin;

@@ -6,3 +6,15 @@
     </div>
   </div>
 </div>
+
+<div [ngSwitch]="currentOrigin">
+  <div *ngSwitchCase="originEnum.COL">
+    <app-invoice-form-col></app-invoice-form-col>
+  </div>
+  <div *ngSwitchCase="originEnum.MEX">
+    <app-invoice-form-mex></app-invoice-form-mex>
+  </div>
+  <div *ngSwitchDefault>
+    <app-invoice-form></app-invoice-form>
+  </div>
+</div>
