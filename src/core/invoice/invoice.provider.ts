@@ -4,6 +4,7 @@ import {
   CHLInvoiceManager,
   COLInvoiceManager,
   ECUInvoiceManager,
+  GeneralInvoiceManager,
   InvoiceManager,
   MEXInvoiceManager,
   URYInvoiceManager
@@ -26,8 +27,10 @@ export const invoiceProviders = [
           return new ECUInvoiceManager(invoiceRepository);
         case OriginEnum.URY:
           return new URYInvoiceManager(invoiceRepository);
-        default:
+        case OriginEnum.COL:
           return new COLInvoiceManager(invoiceRepository);
+        default:
+          return new GeneralInvoiceManager(invoiceRepository);
       }
     },
     deps: [InvoiceRepository, AppService],
