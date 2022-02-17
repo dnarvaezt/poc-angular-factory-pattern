@@ -12,7 +12,7 @@ export class InvoiceFormComponent implements OnInit {
 
   constructor(
     public invoiceService: InvoiceService,
-    private invoiceManager: InvoiceManager
+    public invoiceManager: InvoiceManager
   ) {}
 
   ngOnInit(): void {}

@@ -12,14 +12,16 @@ export class InvoiceFormColComponent
   extends InvoiceFormComponent
   implements OnInit
 {
-  constructor(
-    override invoiceService: InvoiceService,
-    invoiceManager: InvoiceManager
-  ) {
+  constructor(invoiceService: InvoiceService, invoiceManager: InvoiceManager) {
     super(invoiceService, invoiceManager);
   }
 
   override ngOnInit(): void {
     this.currentOriginName = 'Colombia';
+  }
+
+  override async onSave() {
+    console.log('>>>>> onSave Función editada desde COL');
+    await this.invoiceManager.set({});
   }
 }

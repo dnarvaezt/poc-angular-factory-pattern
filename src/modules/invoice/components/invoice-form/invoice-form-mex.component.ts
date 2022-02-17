@@ -12,10 +12,7 @@ export class InvoiceFormMexComponent
   extends InvoiceFormComponent
   implements OnInit
 {
-  constructor(
-    override invoiceService: InvoiceService,
-    invoiceManager: InvoiceManager
-  ) {
+  constructor(invoiceService: InvoiceService, invoiceManager: InvoiceManager) {
     super(invoiceService, invoiceManager);
   }
 
